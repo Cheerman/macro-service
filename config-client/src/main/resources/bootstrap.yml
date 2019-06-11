@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: config-client
+  cloud:
+    config:
+      #uri: http://localhost:8678
+      fail-fast: true
+      #profile: dev
+      discovery:
+        enabled: true   #开启配置服务发现
+        serviceId: config-server #配置服务实例名称,这里使用"discovery.serviceId",不能使用"discovery.service-id"
+
+  profiles:
+    active: dev
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8671/eureka/
+
+server:
+  port: 8672

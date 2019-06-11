@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/shared
+      name: config-client
+  profiles:
+    active: dev
+  application:
+    name: config-server
+server:
+  port: 8678
+

@@ -1,0 +1,35 @@
+
+server:
+  port: 8678
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Cheerman/mypro         # 配置git仓库的地址
+          search-paths: config-respo
+          username:
+          password:
+      name: config-client
+      label: master
+  application:
+    name: config-server
+  rabbitmq:
+    host: 192.168.0.6
+    port: 5672
+    username: admin
+    password: 123456
+
+management:
+  security:
+    enabled: false
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8671/eureka/
+
+
+
+

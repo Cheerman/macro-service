@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: eureka-monitor-client
+
+server:
+  port: 8676
+
+turbine:
+  aggregator:
+    clusterConfig: default
+  appConfig : eureka-ribbon-client,eureka-feign-client  #配置需要监控的服务名
+  clusterNameExpression : new String("default") #默认为服务名的集群,此时用默认即可
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8671/eureka/

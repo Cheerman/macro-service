@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: eureka-ribbon-client
+
+server:
+  port: 8674
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8671/eureka/
+  ribbon:
+
+
+
+#########
+#禁止Ribbon从Eureka获取注册列表信息
+#ribbon:
+  #eureka:
+    #enabled: false
+
+
+#手动配置服务列表
+#stores:
+  #ribbon:
+    #listOfServers: example1.com,example2.com
+#########
