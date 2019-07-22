@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: zipkin-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+zipkin:
+  storage:
+    type: elasticsearch
+    StorageComponent: elasticsearch
+    elasticsearch:
+      cluster: elasticsearch
+      max-requests: 30
+      index: zipkin
+      index-shards: 3
+      index-replicas: 1
+      hosts: localhost:9200
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8671/eureka/
+
+
+server:
+  port: 9411
+
+
